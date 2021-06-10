@@ -1,0 +1,145 @@
+// .login-wrapper {
+//   min-height: 100vh;
+//   .login-outer {
+//     display: flex;
+//     min-height: 100vh;
+//     .leftbox-outer {
+//       position: relative;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       padding: 55px;
+//       max-width: 480px;
+//       bottom: 0;
+//       background:  url('./assets/images/login-bg.png') no-repeat center;
+//       background-size: cover;
+//       &:before {
+//           content: "";
+//           position: absolute;
+//           top: 0;
+//           bottom: 0;
+//           left: 0;
+//           right: 0;
+//           background-color: #2BCFA5;
+//           opacity: 0.6;
+//           z-index: -1;
+//       }
+//       div {
+//         color: #fff;
+//         .quote {
+//           padding-bottom: 80px;
+//         }
+//         .author {
+//           padding: 0;
+//         }
+//       }
+//     }
+//     .rightbox-outer {
+//       display: flex;
+//       align-items: center;
+//       padding: 40px 190px;
+//       max-width: 100%;
+//       bottom: 0;
+//       background: #ffffff;
+//       flex-grow: 1;
+//       .horizontal-logo {
+//         margin-bottom: 40px;
+//       }
+//       .title {
+//         font-size: 26px;
+//         line-height: 32px;
+//         color: #333333;
+//         font-weight: 500;
+//         padding-bottom: 34px;
+//       }
+//       .form {
+//         min-width: 400px;
+//       }
+//       .mat-flat-button.mat-button-base.btn-lg {
+//         min-width: 118px;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 1559px) {
+//   .login-wrapper {
+//     .login-outer {
+//       .leftbox-outer {
+//         max-width: 400px;
+//         padding: 30px;
+//         div {
+//           .quote {
+//             font-size: 32px;
+//             line-height: 44px;
+//             padding-bottom: 50px;
+//           }
+//         }
+//       }
+//       .rightbox-outer {
+//         padding: 40px 80px;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 991px) {
+//   .login-wrapper {
+//     .login-outer {
+//       .leftbox-outer {
+//         max-width: 300px;
+//         padding: 20px;
+//         div {
+//           .quote {
+//             font-size: 24px;
+//             line-height: 36px;
+//             padding-bottom: 30px;
+//           }
+//         }
+//       }
+//       .rightbox-outer {
+//         padding: 40px;
+//         .form {
+//           min-width: 360px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 767px) {
+//   .login-wrapper {
+//     .login-outer {
+//       .leftbox-outer {
+//         display: none;
+//       }
+//       .rightbox-outer {
+//         padding: 40px;
+//         background-color: rgba(43, 207, 165, 0.12);
+//         .form {
+//           min-width: 100%;
+//           max-width: 100%;
+//           margin: 0 auto;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 575px) {
+//   .login-wrapper {
+//     .login-outer {
+//       .rightbox-outer {
+//         padding: 20px;
+//         .horizontal-logo {
+//           margin-bottom: 35px;
+//         }
+//         .title {
+//           font-size: 22px;
+//           line-height: 26px;
+//           padding-bottom: 26px;
+//         }
+//       }
+//     }
+//   }
+// }

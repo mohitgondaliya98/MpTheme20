@@ -1,0 +1,93 @@
+<div class="modal-header">
+    <h4 class="modal-title">Sign Up</h4>
+    <button type="button" matRipple class="modal-close" (click)="closeModal()"></button>
+</div>
+<div class="modal-body">
+
+  
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field class="form-control" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" placeholder="Enter First Name">
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field class="form-control" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" placeholder="Enter Last Name">
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field class="form-control" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" placeholder="Enter Email">
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field class="form-control" appearance="outline">
+                <mat-label>Role</mat-label>
+                <mat-select placeholder="Enter Role">
+                    <mat-option value="Admin">Admin</mat-option>
+                    <mat-option value="User">User</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field class="form-control" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Enter Password" [type]="passwordHide ? 'password' : 'text'">
+                <button mat-icon-button class="btn-icon" type="button" matSuffix (click)="passwordHide = !passwordHide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+                    <img src="./assets/images/password-hide.svg" *ngIf="passwordHide" alt="">
+                    <img src="./assets/images/password-view.svg" *ngIf="!passwordHide" alt="">
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field class="form-control" appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Enter Confirm Password" [type]="confirmPasswordHide ? 'password' : 'text'">
+                <button mat-icon-button class="btn-icon" type="button" matSuffix
+                    (click)="confirmPasswordHide = !confirmPasswordHide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="confirmPasswordHide">
+                    <img src="./assets/images/password-hide.svg" *ngIf="confirmPasswordHide" alt="">
+                    <img src="./assets/images/password-view.svg" *ngIf="!confirmPasswordHide" alt="">
+                </button>
+            </mat-form-field>
+        </div>
+       
+        <div class="col-md-6">
+            <mat-form-field class="form-control" appearance="outline">
+                <mat-label>Contact</mat-label>
+                <input matInput type="text" placeholder="Enter Contact no">
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field class="form-control" appearance="outline">
+                <mat-label>Location</mat-label>
+                <input matInput type="text" placeholder="Enter Location">
+            </mat-form-field>
+        </div>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button
+      mat-stroked-button
+      class="btn btn-rounded btn-oulined-default mr-2 mb-2 btn-lg"
+      title="Cancel"
+      (click)="closeModal()"
+    >
+      Cancel
+    </button>
+    <button
+      mat-flat-button
+      class="btn btn-rounded mr-2 mb-2 btn-lg"
+      color="primary"
+      title="Send"
+      (click)="goTODashboard()"
+    >
+      Send
+    </button>
+</div>

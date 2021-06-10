@@ -1,0 +1,118 @@
+<header>
+  <div class="row">
+    <div class="col-auto">
+      <button
+        mat-icon-button
+        class="d-lg-none d-inline-block btn-menu mr-2"
+        (click)="globalMethodObject.toggleMenu()"
+      >
+        <img src="./assets/images/menu-white.svg" alt="" />
+      </button>
+      <a href="#" title="Company" class="logo mr-lg-3">
+        <img
+          class="d-lg-inline-block d-none"
+          src="./assets/images/horizontal-white-logo.svg"
+          alt=""
+        />
+        <img
+          class="d-lg-none"
+          src="./assets/images/logo-white.svg"
+          alt=""
+        />
+      </a>
+    </div>
+    <div class="col">
+      <div class="header-search mr-md-2">
+        <input
+          type="text"
+          class="header-search-input"
+          placeholder="Search anything ..."
+        />
+      </div>
+      <a
+        class="btn btn-white-outlined btn-rounded mr-1 d-sm-inline-block d-none"
+        mat-stroked-button
+        routerLink="/"
+        title="Admin"
+        >Admin</a
+      >
+      <button
+        mat-icon-button
+        aria-label="Search"
+        class="d-md-none mr-1"
+        (click)="toggleSearch()"
+      >
+        <img src="./assets/images/search-icon-white.svg" alt="" />
+      </button>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="notificationMenu"
+        class="have-simple-badge mr-1"
+        matBadge=" " matBadgeOverlap="false" matBadgeColor="accent" matBadgeSize="small"
+      >
+        <img src="./assets/images/notification-icon-white.svg" alt="" />
+      </button>
+      <mat-menu
+        #notificationMenu="matMenu"
+        class="default-menu notification-dropmenu"
+        yPosition="below"
+        xPosition="before"
+      >
+        <div class="notification-wrapper">
+          <button
+            mat-menu-item
+            class="notification-item"
+            *ngFor="let notification of notificationData"
+            [class.unread]="true"
+          >
+            <span class="alert-circle">
+              <img
+                src="./assets/images/notification-icon-primary.svg"
+                alt=""
+              />
+            </span>
+            <h6 class="notification-title">
+              {{ notification?.title }}
+              <p class="notification-description">
+                {{ notification?.description }}
+              </p>
+            </h6>
+            <span class="notification-time"
+              >{{ notification?.time }} hr ago</span
+            >
+          </button>
+        </div>
+        <div
+          class="notification-footer"
+          matRipple
+          matRippleColor="rgba(86, 38, 165, 0.05)"
+        >
+          <a
+            href="javascript:void(0)"
+            class="primary-link"
+            title="View all"
+            >View all</a
+          >
+        </div>
+      </mat-menu>
+      <button mat-icon-button aria-label="help" class="mr-1">
+        <img src="./assets/images/help-icon-white.svg" alt="" />
+      </button>
+      <button mat-button [matMenuTriggerFor]="profileMenu" class="btn-profile">
+        <img
+          class="user-avatar mr-lg-2 mr-0"
+          src="./assets/images/user-avatar.jpg"
+          alt=""
+        />
+        <span class="username d-lg-inline-block d-none">Lia Watson</span>
+      </button>
+      <mat-menu #profileMenu="matMenu" xPosition="before">
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>Setting</button>
+        <button mat-menu-item>Change Password</button>
+        <button mat-menu-item (click)="signOut()">Logout</button>
+      </mat-menu>
+    </div>
+  </div>
+</header>
+<div class="overlayer" (click)="globalMethodObject.removeAll()"></div>

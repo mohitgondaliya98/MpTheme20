@@ -1,0 +1,466 @@
+<div class="main-content" @animationIn @animationChildIn>
+  <div class="card TypeTwo card-bottom-30 animation-target">
+    <div class="card-header">
+      <h4 class="card-title">Table Data</h4>
+    </div>
+    <div class="card-body pb-0">
+      <div class="grid table-responsive">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Name Column start -->
+          <ng-container matColumnDef="name">
+            <th
+              mat-header-cell
+              mat-sort-header
+              *matHeaderCellDef
+              mat-sort-header
+            >
+              Name
+            </th>
+            <td mat-cell *matCellDef="let element" class="row-clickable">
+              {{ element.name }}
+            </td>
+          </ng-container>
+          <!-- Name Column end -->
+
+          <!-- Task Column start -->
+          <ng-container matColumnDef="task">
+            <th
+              mat-header-cell
+              mat-sort-header
+              mat-sort-header
+              *matHeaderCellDef
+            >
+              Task
+            </th>
+            <td mat-cell *matCellDef="let element" class="row-clickable">
+              {{ element.task }}
+            </td>
+          </ng-container>
+          <!-- Task Column end -->
+
+          <!-- UserType Column start -->
+          <ng-container matColumnDef="userType">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element" class="row-clickable">
+              {{ element.userType }}
+            </td>
+          </ng-container>
+          <!-- UserType Column end -->
+
+          <!-- Status Column start -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef class="text-center">
+              Status
+            </th>
+            <td
+              mat-cell
+              *matCellDef="let element"
+              class="row-clickable"
+              class="text-center"
+            >
+              <span class="grid-status {{ element.status_class }}">{{
+                element.status
+              }}</span>
+              <span>{{ element.status_datetime }}</span>
+            </td>
+          </ng-container>
+          <!-- Status Column end -->
+
+          <!-- Action Column start -->
+          <ng-container matColumnDef="action">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              class="text-center"
+              width="150"
+            >
+              Action
+            </th>
+            <td mat-cell *matCellDef="let element" class="actions">
+              <button mat-icon-button>
+                <img src="./assets/images/edit-dark.svg" alt="" />
+              </button>
+              <button mat-icon-button>
+                <img src="./assets/images/bin-dark.svg" alt="" />
+              </button>
+            </td>
+          </ng-container>
+          <!-- Action Column end -->
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+    </div>
+  </div>
+  <div class="card TypeTwo card-bottom-30 animation-target">
+    <div class="card-header">
+      <h4 class="card-title">Form Element</h4>
+    </div>
+    <div class="card-body">
+      <!-- one column start -->
+      <mat-form-field class="form-control" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter Username" />
+      </mat-form-field>
+
+      <mat-form-field class="form-control" appearance="outline">
+        <mat-label>Dropdown</mat-label>
+        <mat-select>
+          <mat-option value="Option 1">Option 1</mat-option>
+          <mat-option value="Option 2">Option 2</mat-option>
+          <mat-option value="Option 3">Option 3</mat-option>
+          <mat-option value="Option 4">Option 4</mat-option>
+          <mat-option value="Option 5">Option 5</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="form-control" appearance="outline">
+        <mat-label>Textarea</mat-label>
+        <textarea rows="4" matInput></textarea>
+      </mat-form-field>
+      <!-- one column end -->
+
+      <!-- Two column start -->
+      <h5 class="group-title">Two column</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Two column end -->
+
+      <!-- Three column start -->
+      <h5 class="group-title">Three column</h5>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Three column end -->
+
+      <!-- Four column start -->
+      <h5 class="group-title">Four column</h5>
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter Username" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Dropdown</mat-label>
+            <mat-select>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Four column end -->
+
+      <!-- Four column start -->
+      <h5 class="group-title">Other form elements</h5>
+
+      <div class="d-flex align-items-center mb-3">
+        <span class="mr-3">File Upload</span>
+        <label for="FileUpload" class="btn-file-upload btn-rounded" matRipple>
+          <span>
+            <img src="./assets/images/upload-white.svg" alt="" />
+            Upload</span
+          >
+          <input type="file" id="FileUpload" />
+        </label>
+      </div>
+
+      <div class="mb-3">
+        <label class="d-block mb-2 fs-16">Checkbox</label>
+        <mat-checkbox class="custom-check">Option1</mat-checkbox>
+        <mat-checkbox class="custom-check">Option2</mat-checkbox>
+        <mat-checkbox class="custom-check">Option3</mat-checkbox>
+      </div>
+
+      <div class="mb-3">
+        <label class="d-block mb-2 fs-16">Radio buttons</label>
+        <mat-radio-button class="custom-radio">Option1</mat-radio-button>
+        <mat-radio-button class="custom-radio">Option2</mat-radio-button>
+        <mat-radio-button class="custom-radio">Option3</mat-radio-button>
+      </div>
+
+      <!-- New components -->
+      <h5 class="group-title">Add ons elements</h5>
+     
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label class="d-block mb-3 fs-16">Spinner</label>
+          <mat-progress-spinner class="primary-spinner" mode="indeterminate" diameter="30" strokeWidth="2"></mat-progress-spinner>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="d-block mb-3 fs-16">Switch</label>
+          <mat-slide-toggle class="primary-switch">Toggle Switch</mat-slide-toggle>
+        </div>
+        <div class="col-md-4 mb-md-3 mb-2">
+          <label class="d-block fs-16">Slider</label>
+          <mat-slider
+            class="primary-slider"
+            max="100"
+            min="10"
+            step="5"
+            thumbLabel="{true}"
+            aria-labelledby="Price Slider"
+          >
+          </mat-slider>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>Multi Select</mat-label>
+            <mat-select multiple>
+              <mat-option value="Option 1">Option 1</mat-option>
+              <mat-option value="Option 2">Option 2</mat-option>
+              <mat-option value="Option 3">Option 3</mat-option>
+              <mat-option value="Option 4">Option 4</mat-option>
+              <mat-option value="Option 5">Option 5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-12">
+          <mat-form-field class="form-control" appearance="outline">
+            <mat-label>chips list</mat-label>
+            <mat-chip-list
+              #chipList
+              aria-label="Video keywords"
+              multiple
+              [formControl]="formControl"
+            >
+              <mat-chip
+                *ngFor="let keyword of keywords"
+                (removed)="removeKeyword(keyword)"
+              >
+                {{ keyword }}
+              </mat-chip>
+              <input
+                placeholder="Add keyword..."
+                [matChipInputFor]="chipList"
+                (matChipInputTokenEnd)="addKeywordFromInput($event)"
+              />
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-end">
+        <button
+          mat-flat-button
+          class="btn btn-rounded mr-2 mb-2 btn-lg"
+          color="primary"
+          title="Save"
+        >
+          Save
+        </button>
+        <button
+          mat-stroked-button
+          class="btn btn-rounded btn-oulined-default mr-2 mb-2 btn-lg"
+          title="Cancel"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card TypeTwo animation-target">
+    <div class="card-header">
+      <h4 class="card-title">Tabs</h4>
+    </div>
+    <div class="card-body pt-3 pb-2">
+      <mat-tab-group class="primary-tab">
+        <mat-tab label="Active">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </mat-tab>
+        <mat-tab label="Inactive">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. In aliquam
+          sem fringilla ut morbi tincidunt augue interdum velit. Sociis natoque
+          penatibus et magnis dis parturient montes. Ultricies mi quis hendrerit
+          dolor magna eget est lorem ipsum. In est ante in nibh mauris cursus
+          mattis molestie a. Netus Interdum velit laoreet id donec ultrices
+          tincidunt arcu. Fermentum leo vel orci porta non pulvinar neque
+          laoreet. Erat</mat-tab
+        >
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="login-wrapper" @animationIn @animationChildIn>
+  <div class="login-outer">
+    <div class="leftbox-outer">
+      <div class="animation-target">
+        <h1 class="quote fw-500">
+          "Lorem is a lovely trick designed by nature to stop accountants when
+          numbers become superfluous."
+        </h1>
+        <h5 class="author">- Lorem ipsum</h5>
+      </div>
+    </div>
+    <div class="rightbox-outer">
+      <div class="form">
+        <a routerLink="/" title="Home" class="horizontal-logo animation-target">
+          <img src="./assets/images/horizontal-primary-logo.svg" alt="" />
+        </a>
+        <h4 class="title animation-target">Sign in to your account</h4>
+        <mat-form-field
+          class="form-control animation-target"
+          appearance="outline"
+        >
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter Username" />
+        </mat-form-field>
+        <mat-form-field
+          class="form-control animation-target"
+          appearance="outline"
+        >
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Enter Password" />
+        </mat-form-field>
+        <a
+          href="#"
+          title="Forgot password?"
+          class="default-link animation-target mb-sm-4 mb-3 fs-14"
+          (click)="openForgotPassword($event)"
+          >Forgot password?</a
+        >
+        <div
+          class="
+            d-md-flex
+            justify-content-between
+            align-items-center
+            animation-target
+          "
+        >
+          <button
+            mat-flat-button
+            class="btn btn-lg btn-rounded mb-md-0 mb-5"
+            color="primary"
+            title="Sign In"
+            (click)="goToDashboard();"
+          >
+            Sign In
+          </button>
+          <p class="pb-0 fs-14 text-secondary d-flex align-items-center">
+            Don’t have an account?
+            <a href="#" title="Sign up" class="primary-link ml-1" (click)="openSignUp($event)">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

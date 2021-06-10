@@ -1,0 +1,61 @@
+<aside class="sidebar">
+  <a href="#" title="Company" class="logo d-lg-none d-block">
+    <img
+      src="./assets/images/horizontal-primary-logo.svg"
+      alt=""
+    />
+  </a>
+  <div class="nav-outer">
+    <ul class="main-navigation">
+      <li class="nav-link">
+        <a routerLink="/home" href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Home" class="nav-item" matRipple (click)="globalMethodObject.removeAll()"> 
+          <i class="nav-icon">
+            <img src="./assets/images/home-icon.svg" alt="" />
+          </i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="nav-link">
+        <a routerLink="/" href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Wealthier" class="nav-item" matRipple (click)="globalMethodObject.removeAll()"> 
+          <i class="nav-icon">
+            <img src="./assets/images/wealthier-icon.svg" alt="" />
+          </i>
+          <span>Wealthier</span>
+        </a>
+      </li>
+      <li class="nav-link">
+        <a routerLink="/add-ons" href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Add-ons" class="nav-item" matRipple (click)="globalMethodObject.removeAll()"> 
+          <i class="nav-icon">
+            <img src="./assets/images/addons-icon.svg" alt="" />
+          </i>
+          <span>Add-ons</span>
+        </a>
+      </li>
+      <li class="nav-link">
+        <a routerLink="/" href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Refer a Friend" class="nav-item" matRipple (click)="globalMethodObject.removeAll()"> 
+          <i class="nav-icon">
+            <img src="./assets/images/refer-friend-icon.svg" alt="" />
+          </i>
+          <span>Refer a Friend</span>
+        </a>
+      </li>
+      <li class="nav-link">
+        <a routerLink="/" href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Contact" class="nav-item" matRipple (click)="globalMethodObject.removeAll()"> 
+          <i class="nav-icon">
+            <img src="./assets/images/contact-icon.svg" alt="" />
+          </i>
+          <span>Contact</span>
+        </a>
+      </li>
+    </ul>
+    <a class="default-link d-sm-none" href="javascript:void(0)" routerLink="/" title="Admin"
+    matRipple>Admin</a
+    >
+    <a class="default-link d-lg-none" href="javascript:void(0)" routerLink="/" title="Get a suggestion for us?"
+    matRipple>Get a suggestion for us?</a
+    >
+    <a class="default-link d-lg-inline-block d-none" href="javascript:void(0)" routerLink="/" title="Get a suggestion for us?"
+    >Get a suggestion for us?</a
+    >
+  </div>
+</aside>
